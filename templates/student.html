@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block pageheading %}
+menu
+{% endblock %}
+
+{% block main %}
+
+     <div class="products">
+         {% for student in students %}
+        <div class = "product-box">
+            <p><strong>ID</strong> {{ student[0] }}</p>
+            <p><strong>First Name</strong>{{ student[1] }}</p>
+            <p><strong>Last Name</strong>{{ student[2] }}</p>
+            <p><strong>Student_ID:</strong> {{ student[3] }}</p>
+            <p><strong>Email:</strong>{{ student[4] }}</p>
+        </div>
+    </div>
+
+
+
+ {% endfor %}
+
+{% endblock %}

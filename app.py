@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import sqlite3
 from sqlite3 import Error
 
-DATABASE = "C:/Users/riley/OneDrive/DTS/13DTS/Flask/student grades"
+DATABASE = "C:/Users/riley/OneDrive/DTS/13DTS/Flask/studentGrades/Grade.db"
 app = Flask(__name__)
 
 
@@ -21,7 +21,7 @@ def hello_world():  # put application's code here
 
 
 @app.route('/student')
-def hello_world():  # put application's code here
+def render_student_page():  # put application's code here
     con = create_connection(DATABASE)
     query = "SELECT id, Name, Last_name, Student_id, Email FROM Student_Names"
     cur = con.cursor()
